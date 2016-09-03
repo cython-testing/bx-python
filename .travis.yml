@@ -23,7 +23,7 @@ before_install:
 install: 
     - conda create --yes -n testenv python=$TRAVIS_PYTHON_VERSION Cython numpy nose
     - source activate testenv
-    - pip install https://github.com/cython/cython/archive/master.zip
+    - pip install https://github.com/cython/cython/archive/master.zip --install-option=--no-cython-compile
     - python setup.py build_ext --inplace
     - python setup.py install
 script: 
